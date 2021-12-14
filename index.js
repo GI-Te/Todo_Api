@@ -9,7 +9,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const port = process.env.PORT||5000;
+const port = process.env.PORT ||5000;
 app.use(cors());
 
 //home route
@@ -21,11 +21,12 @@ app.use(express.json());
 
 //port route for cterte a todo
 app.post("/todos",async(req,res)=>{
-    const{title,name,status} =req.body;
+    const{title,discription,status,date_time} =req.body;
     const todo = await Todo.create({
         title,
-        name,
-        status
+        discription,
+        status,
+        date_time
     });
 
     if (todo){

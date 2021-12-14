@@ -7,15 +7,17 @@ const todoSchema = new Schema({
         type:String,
         required:true
     },
-    name:{
+    discription:{
         type:String,
         required:true
     },
     status:{
         type:Boolean,
-        required:false
+        required:true,
+        default:false
     },
-    date: { type: Date, default: Date.now }
+    date_time: { type: String,
+         required: true }
 });
 const Todo = model("Tododb",todoSchema)
 export {Todo}
